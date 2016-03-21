@@ -34,14 +34,14 @@ public class AESTest {
     @Test
     public void encryptAES128Test() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException, UnsupportedEncodingException {
 //        byte[] keyBytes= "XoRm+YugkBnl2CvB".getBytes();
-        byte[] keyBytes= "XoRm+YugkBnl2CvB".getBytes();
+        byte[] keyBytes= "1111111111111111".getBytes();
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
         Key secureKey = new SecretKeySpec(keyBytes, "AES");
 
         IvParameterSpec ivSpec = new IvParameterSpec(keyBytes);
         cipher.init(Cipher.ENCRYPT_MODE, secureKey, ivSpec);
 
-        byte[] encryptedData = cipher.doFinal("penta7728!".getBytes("UTF-8"));
+        byte[] encryptedData = cipher.doFinal("1234".getBytes("UTF-8"));
         String base64EncodedData = Base64.encodeBase64URLSafeString(encryptedData);
         System.out.println(base64EncodedData);
 
@@ -50,7 +50,7 @@ public class AESTest {
     @Test
     public void encryptAES128Test2() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, UnsupportedEncodingException, InvalidAlgorithmParameterException {
         byte[] keyBytes= new byte[16];
-        byte[] b= "XoRm+YugkBnl2CvB".getBytes("UTF-8");
+        byte[] b= "1111111111111111".getBytes("UTF-8");
         int len= b.length;
         if (len > keyBytes.length) len = keyBytes.length;
         System.arraycopy(b, 0, keyBytes, 0, len);
@@ -61,7 +61,7 @@ public class AESTest {
         IvParameterSpec ivSpec = new IvParameterSpec(keyBytes);
         cipher.init(Cipher.ENCRYPT_MODE,keySpec,ivSpec);
 
-        byte[] results = cipher.doFinal("penta7728!".getBytes("UTF-8"));
+        byte[] results = cipher.doFinal("1234".getBytes("UTF-8"));
         BASE64Encoder encoder = new BASE64Encoder();
         System.out.println(encoder.encode(results));
     }
