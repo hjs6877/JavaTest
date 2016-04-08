@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AesDecrypter:jar">
+    <output-path>$PROJECT_DIR$/../AesDecrypter/src/out</output-path>
+    <root id="archive" name="AesDecrypter.jar">
+      <element id="module-output" name="AesDecrypter" />
+    </root>
+  </artifact>
+</component>
