@@ -29,7 +29,7 @@ public class PersonTest2 {
                 new Person("윤정식", 22, "")
         );
 
-        List<Person> result = PersonManager.filterPerson(list, (Person p) -> p.getAge() >= 30);
+        List<Person> result = PersonManager.filterPerson(list, p -> p.getAge() >= 30);
 
         for(Person p : result){
             System.out.println(p.getName());

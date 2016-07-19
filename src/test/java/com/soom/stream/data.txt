@@ -1,0 +1,6 @@
+kevin is good.
+tom is good.
+kevin is bad.
+tom is bad.
+jack is good.
+alice is good.
