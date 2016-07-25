@@ -10,9 +10,12 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by kjs on 2016-07-15.
+ * 리듀싱
+ * - 모든 스트림의 요소를 처리해서 값으로 도출하는 연산.
+ * - 리듀스를 이용하면 애플리케이션의 반복된 패턴을 추상화 할 수 있다.
+ * - reduce를 이용하면 내부 반복이 추상화 되면서 내부 구현에서 병렬로 reduce를 실행할 수 있겠된다.
  */
-public class StreamReduceTest {
+public class StreamTest6ReduceTest {
     private static List<Dish> menu;
 
     @BeforeClass
@@ -30,6 +33,9 @@ public class StreamReduceTest {
         );
     }
 
+    /**
+     * 리스트의 요소를 모두 더하는 기존의 방법
+     */
     @Test
     public void simpleForEachTest(){
         List<Integer> numbers = Arrays.asList(1, 3, 5, 6);
@@ -53,6 +59,9 @@ public class StreamReduceTest {
                             .reduce(0, (a, b) -> a + b);
         assertEquals(15, sum);
 
+        /**
+         * 메서드 레퍼런스를 이용해서 코드를 좀 더 간결하게 만들 수 있다.
+         */
         int sum2 = numbers.stream()
                 .reduce(0, Integer::sum);
         assertEquals(15, sum2);
@@ -81,6 +90,9 @@ public class StreamReduceTest {
                                                 .reduce(Integer::max);
         assertEquals(6, (int)maxOptional.get());
 
+        /**
+         * 스트림 요소에서 최소값 반환.
+         */
         Optional<Integer> minOptional = numbers.stream()
                                                 .reduce(Integer::min);
         assertEquals(1, (int)minOptional.get());

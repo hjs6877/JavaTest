@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * 기본형에 특화된 스트림 예제. IntStream, LongStream, DoubleStream
  */
-public class BasicTypeStreamTest {
+public class StreamTest8BasicTypeStreamTest {
     private static List<Dish> menu;
 
     @BeforeClass
@@ -42,6 +42,11 @@ public class BasicTypeStreamTest {
 
         assertEquals(4200, calories);
 
+        /**
+         * 합계 예제에서는 0이라는 기본값이 있었으므로 문제가 없으나 IntStream에서
+         * 최대값을 찾을 때는 0이라는 기본값때문에 잘못된 결과가 도출될 수 있으므로
+         * 스트림에 요소가 없는 상황에서 사용할 수 있는 기본형에 특화된 Optional을 지원한다.
+         */
         OptionalInt optionalInt = menu.stream()
                 .mapToInt(Dish::getCalories)
                 .max();
@@ -68,6 +73,11 @@ public class BasicTypeStreamTest {
                 .filter(n -> n % 2 == 0)
                 .min();
         assertEquals(2, optionalIntMin.getAsInt());
+
+        /**
+         * range 메서드는 시작값과 종료값이 결과에 포함되지 않지만
+         * rangeClosed는 시작값과 종료값이 결과에 포함된다.
+         */
     }
 
 }

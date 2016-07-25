@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by kjs on 2016-07-18.
  */
-public class StreamTest4 {
+public class StreamTest7ExerciseTest {
     private static List<Transaction> transactionList;
 
     @BeforeClass

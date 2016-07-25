@@ -7,9 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by kjs on 2016-07-15.
+ * 특정 속성이 데이터 집합에 있는지 여부를 검색하는 데이터 처리.
+ * - allMatch, anyMatch, noneMatch, findFirst, findAny 등의 메서드를 스트림 API에서 지원한다.
  */
-public class StreamMatchTest {
+public class StreamTest4MatchTest {
     private static List<Dish> menu;
 
     @BeforeClass
@@ -27,6 +28,9 @@ public class StreamMatchTest {
         );
     }
 
+    /**
+     * 프리디케이트가 적어도 한 요소와 일치하는지 확인한다.
+     */
     @Test
     public void anyMathTest(){
         if(menu.stream().anyMatch(Dish::isVegetarian)){
@@ -34,6 +38,9 @@ public class StreamMatchTest {
         }
     }
 
+    /**
+     * 프리디케이트가 모든 요소와 일치하는지 확인한다.
+     */
     @Test
     public void allMatchTest(){
         if(menu.stream().allMatch(d -> d.getCalories() < 1000)){
@@ -41,6 +48,9 @@ public class StreamMatchTest {
         }
     }
 
+    /**
+     * 프리디케이트와 일치하는 요소가 없는지 확인한다.
+     */
     @Test
     public void noneMatchTest(){
         if(menu.stream().noneMatch(d -> d.getCalories() >= 1000)){

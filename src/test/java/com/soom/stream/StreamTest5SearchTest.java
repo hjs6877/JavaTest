@@ -5,13 +5,17 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by kjs on 2016-07-15.
+ * # 요소 검색
+ * Optional이란?
+ * - null은 쉽게 에러를 일으킬 수 있기때문에 자바 8에 Optional<T> 기능이 추가 됨.
+ * - Optional은 값이 존재하는지 확인하고 값이 없을 때 어떻게 처리할 것인지 강제하는 기능을 제공함.
  */
-public class StreamSearchTest {
+public class StreamTest5SearchTest {
     private static List<Dish> menu;
 
     @BeforeClass
@@ -77,4 +81,27 @@ public class StreamSearchTest {
                 .orElse(new Dish("NoFood", false, 0, Dish.Type.OTHER));
         assertEquals("NoFood", dish3.getName());
     }
+
+    /**
+     * 첫번째 요소 찾기
+     */
+    @Test
+    public void findFirstTest(){
+        /**
+         * 숫자 리스트에서 각각의 요소를 제곱하여 3으로 나누어 떨어지는 첫번째 제곱값을 반환하는 예.
+         */
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 6, 8);
+        Optional<Integer> result = numbers.stream()
+                .map(n -> n * n)
+                .filter(n -> n % 3 == 0)
+                .findFirst();
+
+        assertEquals(9, (int)result.get());
+    }
+
+    /**
+     * findAny와 findFirst 두 가지 메서드가 필요한 이유는 병렬성 때문이다.
+     * 병렬 실행에서는 첫 번째 요소를 찾기 어렵다. 따라서 요소의 반환 순서가 상관없다면 병렬 스트림에서는
+     * 제약이 적은 findAny를 사용한다.
+     */
 }
