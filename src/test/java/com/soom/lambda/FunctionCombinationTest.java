@@ -38,4 +38,14 @@ public class FunctionCombinationTest {
 
         assertEquals(5, result);
     }
+
+    @Test
+    public void functionLetterAndThenTest(){
+        Function<String, String> addHeader = Letter::addHeader;
+        Function<String, String> transformationPipeline =
+                addHeader.andThen(Letter::addFooter);
+        String text = transformationPipeline.apply("Hi");
+
+        System.out.println(text);
+    }
 }

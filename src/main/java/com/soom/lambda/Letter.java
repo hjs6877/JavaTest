@@ -9,7 +9,8 @@ public class Letter {
     }
 
     public static String addFooter(String text){
-        return text;
+
+        return text + " Kind regards";
     }
 
     public static String checkSpelling(String text){
