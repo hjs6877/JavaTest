@@ -5,8 +5,9 @@ import org.junit.Test;
 public class BinaryGap {
     @Test
     public void binaryGapTest(){
-        int number = 68;
-        String binaryString = Integer.toBinaryString(number);
+        int N = 561892;
+        String binaryString = Integer.toBinaryString(N);
+
         String[] str = binaryString.split("");
 
         int counter = 0;
@@ -20,8 +21,8 @@ public class BinaryGap {
                 first = end;
                 if(counter > maxCounter){
                     maxCounter = counter;
-                    counter = 0;
                 }
+                counter = 0;
             }else if(Integer.parseInt(s) == 1 && first != 1){
                 first = 1;
             }else{
