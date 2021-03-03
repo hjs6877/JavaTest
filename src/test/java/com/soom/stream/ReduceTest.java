@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
  * - 리듀스를 이용하면 애플리케이션의 반복된 패턴을 추상화 할 수 있다.
  * - reduce를 이용하면 내부 반복이 추상화 되면서 내부 구현에서 병렬로 reduce를 실행할 수 있겠된다.
  */
-public class StreamTest6ReduceTest {
+public class ReduceTest {
     private static List<Dish> menu;
 
     @BeforeClass

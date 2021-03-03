@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
  * - 특정 객체에서 특정 데이터를 선택하는 작업은 데이터 처리 과정에서 자주 수행되는 연산이다.
  * - map과 flatMap 메서드는 특정 데이터를 선택하는 기능을 제공한다.
  */
-public class StreamTest3MapTest {
+public class MapTest {
     private static List<Dish> menu;
 
     @BeforeClass

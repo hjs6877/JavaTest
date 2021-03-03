@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * 기본형에 특화된 스트림 예제. IntStream, LongStream, DoubleStream
  */
-public class StreamTest8BasicTypeStreamTest {
+public class BasicTypeStreamTest {
     private static List<Dish> menu;
 
     @BeforeClass

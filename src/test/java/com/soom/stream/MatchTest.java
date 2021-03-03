@@ -10,7 +10,7 @@ import java.util.List;
  * 특정 속성이 데이터 집합에 있는지 여부를 검색하는 데이터 처리.
  * - allMatch, anyMatch, noneMatch, findFirst, findAny 등의 메서드를 스트림 API에서 지원한다.
  */
-public class StreamTest4MatchTest {
+public class MatchTest {
     private static List<Dish> menu;
 
     @BeforeClass
@@ -32,7 +32,7 @@ public class StreamTest4MatchTest {
      * 프리디케이트가 적어도 한 요소와 일치하는지 확인한다.
      */
     @Test
-    public void anyMathTest(){
+    public void anyMatchTest(){
         if(menu.stream().anyMatch(Dish::isVegetarian)){
             System.out.println("채식위주의 식단이 있습니다.");
         }

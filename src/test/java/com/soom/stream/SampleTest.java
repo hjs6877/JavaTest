@@ -9,7 +9,7 @@ import static java.util.stream.Collectors.toList;
 /**
  * Created by kjs on 2016-07-13.
  */
-public class StreamSampleTest {
+public class SampleTest {
     @Test
     public void NotUsingStreamTest(){
         List<Dish> menu = Arrays.asList(

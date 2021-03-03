@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
  * - null은 쉽게 에러를 일으킬 수 있기때문에 자바 8에 Optional<T> 기능이 추가 됨.
  * - Optional은 값이 존재하는지 확인하고 값이 없을 때 어떻게 처리할 것인지 강제하는 기능을 제공함.
  */
-public class StreamTest5SearchTest {
+public class FindTest {
     private static List<Dish> menu;
 
     @BeforeClass

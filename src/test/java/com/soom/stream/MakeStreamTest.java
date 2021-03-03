@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  * 이밖에도 일련의 값, 배열, 파일, 함수를 이용한 무한 스트림 만들기 등 다양한 방식으로 스트림을
  * 만들 수 있다.
  */
-public class StreamTest9MakeStreamTest {
+public class MakeStreamTest {
     @Test
     public void valueStreamTest(){
         /**
